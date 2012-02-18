@@ -1,4 +1,4 @@
-createEngineNs = (engine) ->
+extendEngine = (engine) ->
     # modify engine protocol: add -ns
     engine.protocol = engine.protocol+'-ns'
 
@@ -58,4 +58,4 @@ createEngineNs = (engine) ->
                 data
             )
 
-module.exports = createEngineNs
+exports.extendEngine = extendEngine

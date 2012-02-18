@@ -3,4 +3,7 @@
   , "version": "0.1.0"
   , "description": "namespaces for engine.io"
   , "main": "./lib/engine.ns.io-base"
+  , "dependencies": {
+      "coffee-script": "*"
+  }
 }
