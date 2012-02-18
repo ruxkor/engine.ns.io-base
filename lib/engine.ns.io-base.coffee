@@ -8,7 +8,7 @@ extendEngine = (engine) ->
 
     # events the socket should not emit because the events are already
     # being used by the engine logic
-    engine.Socket.prototype.ns_reserved_events = ['open','close','message']
+    engine.Socket.prototype.ns_reserved_events = ['open','close','message','raw']
 
     # prefix used for events that would be emitted as a reserved token
     engine.Socket.prototype.ns_prefix = 'ns:'
@@ -57,5 +57,7 @@ extendEngine = (engine) ->
                 if ns in @ns_reserved_events then @ns_prefix_for_reserved+ns else ns,
                 data
             )
+        else
+            @emit 'raw', message
 
 exports.extendEngine = extendEngine
